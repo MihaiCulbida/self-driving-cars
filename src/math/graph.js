@@ -36,6 +36,10 @@ class Graph {
         return false;
     }
 
+    removeSegment(seg) {
+        this.segments.splice(this.segments.indexOf(seg), 1);
+    }
+
     draw(ctx) {
         for (const seg of this.segments) {
             seg.draw(ctx);
