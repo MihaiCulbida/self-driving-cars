@@ -10,59 +10,11 @@
     <h1>World Editor</h1>
     <canvas id="myCanvas"></canvas>
     <div id="controls">
-        <button onclick="addRandomPoint()">Add Point</button>
-        <button onclick="addRandomSegment()">Add Segment</button>
-        <button onclick="removeRandomSegment()">Remove Segment</button>
-        <button onclick="removeRandomPoint()">Remove Point</button>
     </div>
 <script src="src/math/graph.js"></script>
 <script src="src/primitives/point.js"></script>
 <script src="src/primitives/segment.js"></script>
 <script>
-    function removeRandomSegment() {
-        if (graph.segments.length == 0) {
-            console.log("no segments to remove");
-            return;
-        }
-        const index = Math.floor(Math.random() * graph.segments.length);
-        graph.removeSegment(graph.segments[index]);
-        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        graph.draw(ctx);
-    }
-
-    function removeRandomPoint() {
-        if (graph.points.length == 0) {
-            console.log("no points to remove");
-            return;
-        }
-        const index = Math.floor(Math.random() * graph.points.length);
-        graph.removePoint(graph.points[index]);
-        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        graph.draw(ctx);
-    }
-
-    function addRandomPoint() {
-        const success = graph.tryAddPoint(
-            new Point(
-                Math.random() * myCanvas.width,
-                Math.random() * myCanvas.height,
-            )
-        );
-        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        graph.draw(ctx);
-        console.log(success);
-    }
-
-    function addRandomSegment() {
-        const index1 = Math.floor(Math.random() * graph.points.length);
-        const index2 = Math.floor(Math.random() * graph.points.length);
-        const success = graph.tryAddSegment(
-            new Segment(graph.points[index1], graph.points[index2])
-        );
-        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        graph.draw(ctx);
-        console.log(success);
-    }
 
     myCanvas.width = 600;
     myCanvas.height = 600;
