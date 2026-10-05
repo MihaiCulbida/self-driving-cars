@@ -25,6 +25,7 @@ class GraphEditor {
                 }
                 this.graph.addPoint(mouse);
                 this.selected = mouse;
+                this.hovered = mouse;
             }
         });
         this.canvas.addEventListener("mousemove", (evt) => {
@@ -36,8 +37,10 @@ class GraphEditor {
 
     #removePoint(point) {
         this.graph.removePoint(point);
-        this.selected = null;
         this.hovered = null;
+        if (this.selected === point) {
+            this.selected = null;
+        }
     }
     
     display() {
