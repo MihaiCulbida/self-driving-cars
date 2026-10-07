@@ -43,7 +43,10 @@
 
     function animate() {
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        ctx.save();
+        ctx.scale(1 / viewport.zoom, 1 / viewport.zoom);
         graphEditor.display();
+        ctx.restore();
         requestAnimationFrame(animate);
     }
 </script>
