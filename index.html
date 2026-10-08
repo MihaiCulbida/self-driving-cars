@@ -10,6 +10,8 @@
     <h1>World Editor</h1>
     <canvas id="myCanvas"></canvas>
     <div id="controls">
+        <button onclick="dispose()">Dispose</button>
+        <button onclick="save()">Save</button>
     </div>
     
 <script src="src/graphEditor.js"></script>
@@ -45,6 +47,10 @@
         viewport.reset();
         graphEditor.display();
         requestAnimationFrame(animate);
+    }
+
+    function dispose() {
+        graphEditor.dispose();
     }
 </script>
 </body>
