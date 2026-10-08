@@ -18,7 +18,10 @@ class Viewport {
     }
 
     getMouse(evt) {
-        return new Point(evt.offsetX * this.zoom, evt.offsetY * this.zoom);
+        return new Point(
+            (evt.offsetX - this.center.x) * this.zoom - this.offset.x, 
+            (evt.offsetY - this.center.y) * this.zoom - this.offset.y
+        );
     }
 
     getOffset() {
