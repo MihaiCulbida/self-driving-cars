@@ -48,6 +48,11 @@ class Graph {
         this.segments.splice(this.segments.indexOf(seg), 1);
     }
 
+    dispose() {
+        this.points.length = 0;
+        this.segments.length = 0;
+    }
+
     getSegmentsWithPoint(point) {
         const segs = [];
         for (const seg of this.segments) {
