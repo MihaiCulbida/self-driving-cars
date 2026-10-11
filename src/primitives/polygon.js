@@ -23,6 +23,9 @@ class Polygon {
                 if (int && int.offset != 1 && int.offset != 0) {
                     const point = new Point(int.x, int.y);
                     intersections.push(point);
+                    let aux = segs1[i].p2;
+                    segs1[i].p2 = point;
+                    
                 }
             }
         }
