@@ -13,7 +13,6 @@ class Polygon {
         const segs1 = poly1.segments;
         const segs2 = poly2.segments;
 
-        const intersections = [];
         for (let i = 0; i < segs1.length; i++) {
             for (let j = 0; j < segs2.length; j++) {
                 const int = getIntersection(
@@ -22,7 +21,6 @@ class Polygon {
                 );
                 if (int && int.offset != 1 && int.offset != 0) {
                     const point = new Point(int.x, int.y);
-                    intersections.push(point);
                     let aux = segs1[i].p2;
                     segs1[i].p2 = point;
                     segs1.splice(i + 1, 0, new Segment(point, aux));
@@ -32,7 +30,6 @@ class Polygon {
                 }
             }
         }
-        return intersections;
     }
 
     drawSegments(ctx) {
