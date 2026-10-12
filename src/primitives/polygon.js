@@ -25,11 +25,20 @@ class Polygon {
                     intersections.push(point);
                     let aux = segs1[i].p2;
                     segs1[i].p2 = point;
-                    
+                    segs1.splice(i + 1, 0, new Segment(point, aux));
+                    aux = segs2[j].p2;
+                    segs2[j].p2 = point;
+                    segs2.splice(j + 1, 0, new Segment(point, aux));
                 }
             }
         }
         return intersections;
+    }
+
+    drawSegments(ctx) {
+        for (const seg of this.segments) {
+            seg.draw(ctx, { color: getRandomColor() });
+        }
     }
 
     draw(ctx, { stroke = "blue", lineWidth = 2, fill = "rgba(0, 0, 255, 0.3)" } = {}) {
