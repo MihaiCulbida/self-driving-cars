@@ -9,6 +9,28 @@ class Polygon {
         }
     }
 
+    static union(polys) {
+        Polygon.multiBreak(polys);
+        const keptSegments = [];
+        for (let i = 0; i < polys.length; i++) {
+            for (const seg of polys[i].segments) {
+                let keep = true;
+                for (let j = 0; j < polys.length; j++) {
+                    if (i != j) {
+                        if (polys[j].containsSegment(seg)) {
+                            keep = false;
+                            break;
+                        }
+                    }
+                }
+                if (keep) {
+                    keptSegments.push(seg);
+                }
+            }
+       }
+       return keptSegments;
+    }
+
     static multiBreak(polys) {
         for (let i = 0; i < polys.length - 1; i++) {
             for (let j = i + 1; j < polys.length; j++) {
