@@ -37,7 +37,7 @@ class Polygon {
 
     drawSegments(ctx) {
         for (const seg of this.segments) {
-            seg.draw(ctx, { color: getRandomColor() });
+            seg.draw(ctx, { color: getRandomColor(), width: 5 });
         }
     }
 
