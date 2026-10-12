@@ -17,10 +17,7 @@ class World {
             );
         }
 
-        this.intersections = Polygon.break(
-            this.envelopes[0].poly,
-            this.envelopes[1].poly
-        );
+        Polygon.multiBreak(this.envelopes.map(env => env.poly));
     }
 
     draw(ctx) {
