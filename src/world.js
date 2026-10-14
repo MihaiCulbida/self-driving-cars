@@ -77,6 +77,17 @@ class World {
             }
 
             if (keep) {
+                let closeToSomething = false;
+                for (const poly of illegalPolys) {
+                    if (poly.distanceToPoint(p) < this.treeSize * 2) {
+                        closeToSomething = true;
+                        break
+                    }
+                }
+                keep = closeToSomething;
+            }
+
+            if (keep) {
                 trees.push(p);
                 tryCount = 0;
             }
