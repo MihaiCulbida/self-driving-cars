@@ -4,7 +4,8 @@ class World {
         roadRoundness = 10,
         buildingWidth = 150,
         buildingMinLength = 150,
-        spacing = 50
+        spacing = 50,
+        treeSize = 160
     ) {
         this.graph = graph;
         this.roadWidth = roadWidth;
@@ -12,6 +13,7 @@ class World {
         this.buildingWidth = buildingWidth;
         this.buildingMinLength = buildingMinLength;
         this.spacing = spacing;
+        this.treeSize = treeSize;
 
         this.envelopes = [];
         this.roadBorders = [];
@@ -141,7 +143,7 @@ class World {
             seg.draw(ctx, { color: "white", width: 4 });
         }
         for(const tree of this.trees) {
-            tree.draw(ctx);
+            tree.draw(ctx, { size: this.treeSize, color: "rgba(0,0,0,0.5)" });
         }
         for (const bld of this.buildings) {
             bld.draw(ctx);
