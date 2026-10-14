@@ -60,7 +60,7 @@ class World {
 
             let keep = true;
             for (const poly of illegalPolys) {
-                if (poly.containsPoint(p)) {
+                if (poly.containsPoint(p) || poly.distanceToPoint(p) < this.treeSize / 2) {
                     keep = false;
                     break;
                 }
