@@ -3,13 +3,15 @@ class Tree {
         this.center = center;
         this.size = size;
         this.heightCoef = heightCoef;
+        this.base = this.#generateLevel(center, size);
     }
 
     #generateLevel(point, size) {
         const points = [];
         const rad = size / 2;
         for (let a = 0; a < Math.PI * 2; a += Math.PI / 16) {
-            const noisyRadius = rad * Math.random();
+            const kindOfRandom = Math.cos(((a + this.center.x) * size) %17) ** 2;
+            const noisyRadius = rad * lerp(0.5, 1, kindOfRandom);
             points.push(translate(point, a, noisyRadius));
         }
         return new Polygon(points);
