@@ -67,6 +67,15 @@ class World {
             }
 
             if (keep) {
+                for (const tree of trees) {
+                    if (distance(tree, p) < this.treeSize) {
+                        keep = false;
+                        break;
+                    }
+                }
+            }
+
+            if (keep) {
                 trees.push(p);
             }
         }
