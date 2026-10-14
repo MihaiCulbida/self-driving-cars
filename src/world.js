@@ -91,7 +91,7 @@ class World {
             }
 
             if (keep) {
-                trees.push(p);
+                trees.push(new Tree(p, this.treeSize));
                 tryCount = 0;
             }
             tryCount++;
