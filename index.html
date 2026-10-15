@@ -44,6 +44,7 @@
     const world = new World(graph);
     const viewport = new Viewport(myCanvas);
     const graphEditor = new GraphEditor(viewport, graph);
+    const stopEditor = new stopEditor(viewport, world);
 
     let oldGraphHash = graph.hash();
     setMode("graph");
@@ -59,6 +60,7 @@
         world.draw(ctx, viewPoint);
         ctx.globalAlpha = 0.3;
         graphEditor.display();
+        stopEditor.display();
         requestAnimationFrame(animate);
     }
 
@@ -79,6 +81,7 @@
                 break;
             case "stop":
                 stopBtn.style.backgroundColor = "white";
+                stopEditor.enable();
                 break;
         }
     }
@@ -87,6 +90,7 @@
         graphBtn.style.backgroundColor = "gray";
         graphEditor.disable();
         stopBtn.style.backgroundColor = "gray";
+        stopEditor.disable();
 
     }
 </script>
