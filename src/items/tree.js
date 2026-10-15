@@ -18,10 +18,7 @@ class Tree {
     }
 
     draw(ctx, viewPoint) {
-        const dir = normalize(subtract(this.center, viewPoint));
-        const dist = distance(this.center, viewPoint);
-        const scaler = Math.atan(dist / 300) / (Math.PI / 2);
-        const top = add(this.center, scale(dir, this.height * scaler));
+        const top = getFake3dPoint(this.center, viewPoint, this.height);
         
         const levelCount = 7;
         for(let level = 0; level < levelCount; level++) {
