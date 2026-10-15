@@ -44,12 +44,17 @@ class Building {
                 topMidpoints[0], topMidpoints[1]
             ])
         ];
+        roofPolys.sort(
+            (a, b) =>
+                b.distanceToPoint(viewPoint) -
+                a.distanceToPoint(viewPoint)
+        );
 
-        this.base.draw(ctx, { fill: "white", stroke: "#AAA" });
+        this.base.draw(ctx, { fill: "white", stroke: "rgba(0,0,0,0.2)", lineWidth: 30 });
         for (const side of sides) {
             side.draw(ctx, { fill: "white", stroke: "#AAA" });
         }
-        ceiling.draw(ctx, { fill: "white", stroke: "#AAA" });
+        ceiling.draw(ctx, { fill: "white", stroke: "white", lineWidth: 6});
         for (const poly of roofPolys) {
             poly.draw(ctx, { fill: "#D44", stroke: "#C44", lineWidth: 8, join: "round" });
         }
