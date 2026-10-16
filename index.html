@@ -45,7 +45,7 @@
     const world = new World(graph);
     const viewport = new Viewport(myCanvas);
     const graphEditor = new GraphEditor(viewport, graph);
-    const stopEditor = new stopEditor(viewport, world);
+    const stopEditor = new StopEditor(viewport, world);
 
     let oldGraphHash = graph.hash();
     setMode("graph");
