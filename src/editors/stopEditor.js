@@ -42,6 +42,12 @@ class StopEditor {
         );
         if(seg) {
             this.intent = seg;
+            const proj = seg.projectPoint(this.mouse);
+            if (proj.offset >= 0 && proj.offset <= 1) {
+                this.intent = proj.point;
+            } else {
+                this.intent = null;
+            }
         } else {
             this.intent = null;
         }
