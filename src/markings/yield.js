@@ -1,6 +1,7 @@
 class Yield extends Marking {
    constructor(center, directionVector, width, height) {
       super(center, directionVector, width, height);
+      this.type = "yield";
 
       this.border = this.poly.segments[2];
    }

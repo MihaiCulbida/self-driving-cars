@@ -1,6 +1,7 @@
 class Light extends Marking {
    constructor(center, directionVector, width, height) {
       super(center, directionVector, width, 18);
+      this.type = "light";
 
       this.state = "off";
       this.border = this.poly.segments[0];

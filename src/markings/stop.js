@@ -1,6 +1,7 @@
 class Stop extends Marking {
     constructor(center, directionVector, width, height) {
         super(center, directionVector, width, height);
+        this.type = "stop";
 
         this.border = this.poly.segments[2];
     }
