@@ -12,7 +12,8 @@ h1 {
     background-color: #2a5a;
 }
 
-button {
+button, .file-input-label {
+    display: inline-block;
     background: none;
     background-color: white;
     font-size: 14px;
@@ -21,4 +22,8 @@ button {
     padding: 4px 7px;
     border-radius: 7px;
     cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
 }
