@@ -15,21 +15,33 @@
         &nbsp;
         <button id="graphBtn" onclick="setMode('graph')">Graph</button>
         <button id="stopBtn" onclick="setMode('stop')">Stop</button>
+        <button id="yieldBtn" onclick="setMode('yield')">Yield</button>
         <button id="crossingBtn" onclick="setMode('crossing')">Crossing</button>
+        <button id="parkingBtn" onclick="setMode('parking')">Parking</button>
+        <button id="lightBtn" onclick="setMode('light')">Light</button>
         <button id="startBtn" onclick="setMode('start')">Start</button>
+        <button id="targetBtn" onclick="setMode('target')">Target</button>
     </div>
-    
+
 <script src="src/world.js"></script>
 <script src="src/viewport.js"></script>
 <script src="src/markings/marking.js"></script>
 <script src="src/markings/stop.js"></script>
-<script src="src/markings/start.js"></script>
+<script src="src/markings/yield.js"></script>
 <script src="src/markings/crossing.js"></script>
+<script src="src/markings/parking.js"></script>
+<script src="src/markings/light.js"></script>
+<script src="src/markings/start.js"></script>
+<script src="src/markings/target.js"></script>
 <script src="src/editors/markingEditor.js"></script>
 <script src="src/editors/graphEditor.js"></script>
 <script src="src/editors/stopEditor.js"></script>
-<script src="src/editors/startEditor.js"></script>
+<script src="src/editors/yieldEditor.js"></script>
 <script src="src/editors/crossingEditor.js"></script>
+<script src="src/editors/parkingEditor.js"></script>
+<script src="src/editors/lightEditor.js"></script>
+<script src="src/editors/startEditor.js"></script>
+<script src="src/editors/targetEditor.js"></script>
 <script src="src/items/tree.js"></script>
 <script src="src/items/building.js"></script>
 <script src="src/math/graph.js"></script>
@@ -42,12 +54,12 @@
 
     myCanvas.width = 600;
     myCanvas.height = 600;
-    
+
     const ctx = myCanvas.getContext("2d");
 
     const graphString = localStorage.getItem("graph");
     const graphInfo = graphString ? JSON.parse(graphString) : null;
-    const graph = graphInfo 
+    const graph = graphInfo
     ? Graph.load(graphInfo)
     : new Graph();
 
@@ -56,8 +68,12 @@
     const tools = {
         graph: { button: graphBtn, editor: new GraphEditor(viewport, graph) },
         stop: { button: stopBtn, editor: new StopEditor(viewport, world) },
+        yield: { button: yieldBtn, editor: new YieldEditor(viewport, world) },
         crossing: { button: crossingBtn, editor: new CrossingEditor(viewport, world) },
-        start: { button: startBtn, editor: new StartEditor(viewport, world) }
+        parking: { button: parkingBtn, editor: new ParkingEditor(viewport, world) },
+        light: { button: lightBtn, editor: new LightEditor(viewport, world) },
+        start: { button: startBtn, editor: new StartEditor(viewport, world) },
+        target: { button: targetBtn, editor: new TargetEditor(viewport, world) }
     }
 
     let oldGraphHash = graph.hash();
@@ -90,9 +106,8 @@
 
     function setMode(mode) {
         disableEditors();
-            tools[mode].button.style.backgroundColor = "white";
-            tools[mode].editor.enable();
-
+        tools[mode].button.style.backgroundColor = "white";
+        tools[mode].editor.enable();
     }
 
     function disableEditors() {
