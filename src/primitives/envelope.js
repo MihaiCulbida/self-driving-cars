@@ -1,7 +1,16 @@
 class Envelope {
     constructor(skeleton, width, roundness = 1) {
-        this.skeleton = skeleton;
-        this.poly = this.#generatePolygon(width, roundness);
+        if (skeleton) {
+            this.skeleton = skeleton;
+            this.poly = this.#generatePolygon(width, roundness);
+        }
+    }
+
+    static load(info) {
+        const env = new Envelope();
+        env.skeleton = new Segment(info.skeleton.p1, info.skeleton.p2);
+        env.poly = Polygon.load(info.poly);
+        return env;
     }   
 
     #generatePolygon(width, roundness) {
