@@ -50,7 +50,7 @@
     const viewport = new Viewport(myCanvas);
     const graphEditor = new GraphEditor(viewport, graph);
     const stopEditor = new StopEditor(viewport, world);
-    const crossingEditor = new crossingEditor(viewport, world)
+    const crossingEditor = new CrossingEditor(viewport, world);
 
     let oldGraphHash = graph.hash();
     setMode("graph");
