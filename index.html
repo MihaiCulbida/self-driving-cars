@@ -15,13 +15,16 @@
         &nbsp;
         <button id="graphBtn" onclick="setMode('graph')">Graph</button>
         <button id="stopBtn" onclick="setMode('stop')">Stop</button>
+        <button id="crossingBtn" onclick="setMode('crossing')">Crossing</button>
     </div>
     
 <script src="src/world.js"></script>
 <script src="src/viewport.js"></script>
 <script src="src/markings/stop.js"></script>
+<script src="src/markings/crossing.js"></script>
 <script src="src/editors/graphEditor.js"></script>
 <script src="src/editors/stopEditor.js"></script>
+<script src="src/editors/crossingEditor.js"></script>
 <script src="src/items/tree.js"></script>
 <script src="src/items/building.js"></script>
 <script src="src/math/graph.js"></script>
@@ -47,6 +50,7 @@
     const viewport = new Viewport(myCanvas);
     const graphEditor = new GraphEditor(viewport, graph);
     const stopEditor = new StopEditor(viewport, world);
+    const crossingEditor = new crossingEditor(viewport, world)
 
     let oldGraphHash = graph.hash();
     setMode("graph");
@@ -63,11 +67,13 @@
         ctx.globalAlpha = 0.3;
         graphEditor.display();
         stopEditor.display();
+        crossingEditor.display();
         requestAnimationFrame(animate);
     }
 
     function dispose() {
         graphEditor.dispose();
+        world.markings.length = 0;
     }
 
     function save() {
@@ -85,6 +91,10 @@
                 stopBtn.style.backgroundColor = "white";
                 stopEditor.enable();
                 break;
+            case "crossing":
+                crossingBtn.style.backgroundColor = "white";
+                crossingEditor.enable();
+                break;
         }
     }
 
@@ -93,6 +103,8 @@
         graphEditor.disable();
         stopBtn.style.backgroundColor = "gray";
         stopEditor.disable();
+        crossingBtn.style.backgroundColor = "gray";
+        crossingEditor.disable();
 
     }
 </script>
