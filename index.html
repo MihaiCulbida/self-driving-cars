@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Self-driving car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="carCanvas"></canvas>
+    <div id="verticalButtons">
+        <button onclick="save()">Save</button>
+        <button onclick="discard()">Discard</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
+
+    <script src="world/src/world.js"></script>
+    <script src="world/src/viewport.js"></script>
+    <script src="world/src/markings/marking.js"></script>
+    <script src="world/src/markings/stop.js"></script>
+    <script src="world/src/markings/yield.js"></script>
+    <script src="world/src/markings/crossing.js"></script>
+    <script src="world/src/markings/parking.js"></script>
+    <script src="world/src/markings/light.js"></script>
+    <script src="world/src/markings/start.js"></script>
+    <script src="world/src/markings/target.js"></script>
+    <script src="world/src/items/tree.js"></script>
+    <script src="world/src/items/building.js"></script>
+    <script src="world/src/math/utils.js"></script>
+    <script src="world/src/math/graph.js"></script>
+    <script src="world/src/primitives/point.js"></script>
+    <script src="world/src/primitives/segment.js"></script>
+    <script src="world/src/primitives/polygon.js"></script>
+    <script src="world/src/primitives/envelope.js"></script>
+
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
+    <script src="sensor.js"></script>
+    <script src="utils.js"></script>
+    <script src="controls.js"></script>
+    <script src="car.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
