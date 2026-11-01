@@ -77,3 +77,10 @@ The screen has two parts:
 - The sensor readings go into a **neural network**, which outputs the controls: forward, left, right and reverse.
 - Cars that drive well are kept, and the next cars learn from them.
 
+### Buttons
+
+- **Save**: saves the best car's neural network, so the next run starts from it.
+- **Discard**: deletes the saved neural network, so the cars start learning from scratch.
+
+---
+
