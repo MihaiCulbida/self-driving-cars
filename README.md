@@ -32,3 +32,11 @@ The project has two pages and they must be used in this order:
 
 Open `world/index.html` first. The editor is where you create the world the cars will drive in. Whatever you build here is what the simulation loads.
 
+### What the editor does
+
+You draw the **road network** and decorate it with **road markings** and **scenery**. The world is built from simple pieces:
+
+- **Points and segments (the graph)**: roads are drawn as points connected by segments. Each segment is turned into a road surface with lanes, and where segments meet they form intersections and curves.
+- **Road markings**: signs and paint placed on the road.
+- **Scenery**: trees and buildings generated around the roads.
+- **Viewport**: you can move around and zoom the map while you work.
