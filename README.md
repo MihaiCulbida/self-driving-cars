@@ -51,3 +51,8 @@ You draw the **road network** and decorate it with **road markings** and **scene
 - Parking - a parking spot marking.
 - Traffic light - a traffic light that controls an intersection.
 
+### Scenery
+
+- **Trees** are placed around the roads.
+- **Buildings** are generated along the roads.
+
