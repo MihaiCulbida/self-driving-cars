@@ -70,3 +70,10 @@ The screen has two parts:
 
 - **Left side**: the road with the cars driving on it, using the map you built.
 - **Right side**: a live view of the neural network, showing how the car "thinks" while it drives.
+
+### How the cars drive
+
+- Each car has **sensors** (rays) that measure the distance to road edges, obstacles and traffic.
+- The sensor readings go into a **neural network**, which outputs the controls: forward, left, right and reverse.
+- Cars that drive well are kept, and the next cars learn from them.
+
