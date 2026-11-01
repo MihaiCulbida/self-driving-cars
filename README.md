@@ -62,3 +62,11 @@ When your map is ready, save the world in the editor. Then open the main `index.
 
 ---
 
+## Step 2: The simulation (`index.html`)
+
+Open the main `index.html` after the map is saved.
+
+The screen has two parts:
+
+- **Left side**: the road with the cars driving on it, using the map you built.
+- **Right side**: a live view of the neural network, showing how the car "thinks" while it drives.
