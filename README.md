@@ -56,3 +56,9 @@ You draw the **road network** and decorate it with **road markings** and **scene
 - **Trees** are placed around the roads.
 - **Buildings** are generated along the roads.
 
+### Saving the world
+
+When your map is ready, save the world in the editor. Then open the main `index.html`, which loads the saved world.
+
+---
+
