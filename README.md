@@ -10,3 +10,12 @@ An interactive self-driving car simulation built with HTML, CSS and JavaScript. 
    git clone https://github.com/MihaiCulbida/self-driving-cars.git
    cd self-driving-cars
    ```
+
+2. Open the folder in your code editor and run it with a local server such as the **Live Server** extension, or from the terminal:
+
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+   Then open `http://localhost:8000` in your browser.
+
