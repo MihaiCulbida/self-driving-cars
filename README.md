@@ -1,4 +1,4 @@
-# Self-Driving Cars
+# Self Driving Cars
 
 An interactive self-driving car simulation built with HTML, CSS and JavaScript. You design a road world in a built-in editor, then cars drive through it using sensors to see their surroundings and a neural network to decide how to steer. You can watch the network work in real time and save the best driver.
 
@@ -40,3 +40,14 @@ You draw the **road network** and decorate it with **road markings** and **scene
 - **Road markings**: signs and paint placed on the road.
 - **Scenery**: trees and buildings generated around the roads.
 - **Viewport**: you can move around and zoom the map while you work.
+
+### Road markings
+
+- Start - where the cars begin driving.
+- Target - the destination the cars aim for.
+- Stop - a stop sign, cars must stop here.
+- Yield - a yield sign, cars give way here.
+- Crossing - a pedestrian crossing.
+- Parking - a parking spot marking.
+- Traffic light - a traffic light that controls an intersection.
+
