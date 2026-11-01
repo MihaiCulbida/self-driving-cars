@@ -28,3 +28,7 @@ The project has two pages and they must be used in this order:
 
 ---
 
+## Step 1: World Editor (`world/index.html`)
+
+Open `world/index.html` first. The editor is where you create the world the cars will drive in. Whatever you build here is what the simulation loads.
+
