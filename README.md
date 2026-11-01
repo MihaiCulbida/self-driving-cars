@@ -19,3 +19,12 @@ An interactive self-driving car simulation built with HTML, CSS and JavaScript. 
 
    Then open `http://localhost:8000` in your browser.
 
+## How to use
+
+The project has two pages and they must be used in this order:
+
+1. **`world/index.html`**: the World Editor, where you build the map.
+2. **`index.html`** (the main page): the simulation, where the cars drive on that map.
+
+---
+
